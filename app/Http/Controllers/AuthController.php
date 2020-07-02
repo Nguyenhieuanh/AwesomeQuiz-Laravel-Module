@@ -33,6 +33,12 @@ class AuthController extends Controller
         return $this->respondWithToken($token);
     }
 
+    public function register(RegisterRequest $request)
+    {
+        User::create($request->all());
+        return $this->login($request);
+    }
+
     /**
      * Get the authenticated User.
      *
