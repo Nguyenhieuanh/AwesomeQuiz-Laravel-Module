@@ -12,9 +12,9 @@ class Question extends Model
         "question_content"
     ];
 
-    public function answer()
+    public function answers()
     {
-        return $this->hasMany('App\Models\Answer', 'question_id', 'id');
+        return $this->hasMany('App\Models\Answer');
     }
 
 }
