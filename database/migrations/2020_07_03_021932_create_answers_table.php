@@ -17,7 +17,7 @@ class CreateAnswersTable extends Migration
             $table->increments("id");
             $table->text("answer_content");
             $table->unsignedInteger("question_id");
-            $table->tinyInt("correct")->nullable()->default(0);
+            $table->tinyInteger("correct")->nullable()->default(0);
             $table->foreign("question_id")->references("id")->on("questions");
             $table->timestamps();
         });
